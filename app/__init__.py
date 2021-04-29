@@ -22,6 +22,7 @@ def create_app():
     login_manager.login_view = 'user.login'
     login_manager.init_app(app)
 
+
     @app.errorhandler(404)
     @app.route('/<pagename>')
     def admin(pagename):

@@ -11,7 +11,7 @@ def criarpedido(data):
 
         pedido.PAGAMENTO = data["PAGAMENTO"]
         pedido.ID_VENDEDOR = data["ID_VENDEDOR"]
-        pedido.NOME = data["NOME"]
+        pedido.ID_CLIENTE = data["ID_CLIENTE"]
         pedido.imovel_id = data["imovel_id"]
 
 

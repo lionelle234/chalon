@@ -16,6 +16,7 @@ class Imoveis(Base):
     ENDERECO = Column(String(80, 'SQL_Latin1_General_CP1_CI_AS'), nullable=False)
     VALOR_VENDA = Column(Numeric(10, 2), nullable=False)
     VALOR_COMIS = Column(Numeric(10, 2), nullable=False)
+    STATUS = Column(String(80, 'SQL_Latin1_General_CP1_CI_AS'), nullable=False)
 
     Pedido = relationship("Pedidos", uselist=False, back_populates="Imovel")
 
@@ -32,7 +33,7 @@ class Pedidos(Base):
     PAGAMENTO = Column(String(80, 'SQL_Latin1_General_CP1_CI_AS'), nullable=False)
 
     ID_VENDEDOR = Column(Integer, ForeignKey('Vendedor.ID_VENDEDOR'))
-    NOME = Column(String(80, 'SQL_Latin1_General_CP1_CI_AS'))
+    ID_CLIENTE = Column(Integer, ForeignKey('Cliente.ID_CLIENTE'))
 
     imovel_id = Column(Integer, ForeignKey('Imovel.ID_IMOVEL'))
     Imovel = relationship("Imoveis", back_populates="Pedido")
@@ -45,7 +46,7 @@ class Vendedores(UserMixin, Base):
 
     ID_VENDEDOR = Column(Integer, primary_key=True)
     USUARIO = Column(String(80, 'SQL_Latin1_General_CP1_CI_AS'), nullable=False)
-    SENHA = Column(String(80, 'SQL_Latin1_General_CP1_CI_AS'), nullable=False)
+    SENHA = Column(String(255, 'SQL_Latin1_General_CP1_CI_AS'), nullable=False)
 
     orders1 = relationship('Pedidos')
 
@@ -70,6 +71,7 @@ class Clientes(Base):
     EMAIL = Column(String(80, 'SQL_Latin1_General_CP1_CI_AS'), nullable=False)
     TELEFONE = Column(String(80, 'SQL_Latin1_General_CP1_CI_AS'), nullable=False)
 
+    orders2 = relationship('Pedidos')
 
     def read_client(self):
         return session.query(self.NOME) \

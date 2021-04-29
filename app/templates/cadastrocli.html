@@ -9,37 +9,7 @@
                 
     <main class="content">
 
-        {% include 'includes/navigation.html' %}
 
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
-            <div>
-                <button class="btn btn-secondary text-dark mr-2 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="fas fa-plus mr-2"></span>New
-                </button>
-                <div class="dropdown-menu dashboard-dropdown dropdown-menu-left mt-2">
-                    <a class="dropdown-item font-weight-bold" href="#"><span class="far fa-file-alt mr-2"></span>Document</a>
-                    <a class="dropdown-item font-weight-bold" href="#"><span class="far fa-comment-dots mr-2"></span>Message</a>
-                    <a class="dropdown-item font-weight-bold" href="#"><span class="fas fa-box-open mr-2"></span>Product</a>
-                    <div role="separator" class="dropdown-divider"></div>
-                    <a class="dropdown-item font-weight-bold" href="#"><span class="fas fa-rocket text-danger mr-2"></span>Subscription Plan</a>
-                </div>
-            </div>
-            <div>
-                <button type="button" class="btn btn-primary mr-2"><span class="fas fa-calendar-alt"></span></button>
-                <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="fas fa-clipboard mr-2"></span>Reports
-                    <span class="icon icon-small ml-1"><span class="fas fa-chevron-down"></span></span>
-                </button>
-                <div class="dropdown-menu dashboard-dropdown dropdown-menu-left mt-2">
-                    <a class="dropdown-item font-weight-bold" href="#"><span class="fas fa-box-open mr-2"></span>Products</a>
-                    <a class="dropdown-item font-weight-bold" href="#"><span class="fas fa-store mr-2"></span>Customers</a>
-                    <a class="dropdown-item font-weight-bold" href="#"><span class="fas fa-cart-arrow-down mr-2"></span>Orders</a>
-                    <a class="dropdown-item font-weight-bold" href="#"><span class="fas fa-chart-pie mr-2"></span>Console</a>
-                    <div role="separator" class="dropdown-divider"></div>
-                    <a class="dropdown-item font-weight-bold" href="#"><span class="fas fa-rocket text-success mr-2"></span>All Reports</a>
-                </div>
-            </div>
-        </div>
         <div class="row">
             <div class="col-12 col-xl-8">
                 <div class="card card-body bg-white border-light shadow-sm mb-4">
@@ -57,7 +27,7 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <div>
-                                    <label for="nome">CPF</label>
+                                    <label for="cpf">CPF</label>
                                     {{ form.cpf(class="form-control", type="text", id="nome", placeholder="Nome")  }}
                                 </div>
                             </div>
@@ -65,13 +35,13 @@
                         <div class="row align-items-center">
                             <div class="col-md-6 mb-3">
                                 <div class="form-group">
-                                    <label for="quantidade">E-Mail</label>
+                                    <label for="email">E-Mail</label>
                                     {{ form.email(class="form-control", type="text", id="email", placeholder="E-Mail")  }}
                                 </div>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <div class="form-group">
-                                    <label for="valor_unid">Telefone</label>
+                                    <label for="telefone">Telefone</label>
                                     {{ form.telefone(class="form-control", type="text", id="telefone", placeholder="Telefone")  }}
                                 </div>
                             </div>
